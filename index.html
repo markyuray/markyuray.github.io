@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<h1>The Works of <span>Mark Yuray</span></h1>
+
+<p class="home-content">
+    Herein ye shall befind contain'd the manifold workes of he whomst be known as is mark'd aboven:
+</p>
+
+<br><br>
+
+<div id="home-archive">
+{% for post in site.posts limit:8 %}
+    <li class="archive-li">
+        <a href="{{ post.url }}">{{ post.title }}</a>
+        <br><br>
+        <span>{{ post.date | date: '%B %d, %Y' }}</span>
+    </li>
+{% endfor %}
+</div>

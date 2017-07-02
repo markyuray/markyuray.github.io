@@ -1,0 +1,37 @@
+---
+layout: default
+---
+
+<div class="post">
+  <div class="half-hero" style="background-image:url({{ page.postHero }})"></div>
+  <article class="page">
+    
+    <header class="post-header">
+      <h1>{{ page.title }}</h1>
+      <div class="post-byline">
+        <img src="{{ page.gravatar }}">
+        By {{ page.author }}
+        <br>
+        <span> {{ page.date | date: '%B %d, %Y' }}</span>
+      </div>
+    </header>
+    
+    <br><br>
+    <div class="post-content">
+      {{ content }}
+    </div>
+    <br><br>
+    
+      <h4>Read more:</h4>
+      <ul class="page-archive">
+        {% for post in site.posts limit:3 %}
+          <li class="archive-li">
+            <a href="{{ post.url }}">{{ post.title }}</a>
+            <br><br>
+            <span>{{ post.date | date: '%B %d, %Y' }}</span>
+          </li>
+        {% endfor %}
+      </ul>
+
+  </article>
+</div>
